@@ -1784,6 +1784,7 @@ export default function AllDocTable() {
           setShowToast(false);
         }, 5000);
         handleCloseModal("deleteBulkFileModel");
+        fetchDocumentsData(setDummyData);
         setAllShareData([])
       } else if (response.status === "fail") {
         setToastType("error");
@@ -1793,6 +1794,7 @@ export default function AllDocTable() {
           setShowToast(false);
         }, 5000);
         setAllShareData([])
+        fetchDocumentsData(setDummyData);
       } else {
         setToastType("error");
         setToastMessage("An error occurred while deleting the document bulk!");
@@ -1800,6 +1802,7 @@ export default function AllDocTable() {
         setTimeout(() => {
           setShowToast(false);
         }, 5000);
+        fetchDocumentsData(setDummyData);
       }
     } catch (error) {
       setToastType("error");
@@ -1808,6 +1811,7 @@ export default function AllDocTable() {
       setTimeout(() => {
         setShowToast(false);
       }, 5000);
+      fetchDocumentsData(setDummyData);
       // console.error("Error new version updating:", error);
     }
   };
